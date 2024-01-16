@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Threading.Channels;
 
 namespace ConsoleApp1
 {
@@ -6,20 +7,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //rk}kx
 
-            
-
-         
-           
-          
         }
-
-
         public class Günlük
         {
+
+            public Günlük()
+            {
+                    _ıd= new Random().Next(200,999999999);
+            }
             private string _content;
-            public int Id { get; set; }
+            private int _ıd;
+            public int Id { get { return _ıd; }  }
             public string Content
             {
                 get
@@ -64,6 +63,15 @@ namespace ConsoleApp1
 
         }
 
+        public class Test
+        {
+            public Test()
+            {
+                Id = new Random().Next(1, 2001);
+            }
 
+            public int Id { get; set; }
+
+        }
     }
 }
