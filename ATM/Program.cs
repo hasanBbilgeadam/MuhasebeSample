@@ -280,27 +280,62 @@ namespace ATM
         }
         public static int GetData()
         {
+            //v.1
+            //var control = true;
+            //int x =0;
+            //while (control)
+            //{
+
+
+            //    Console.Write(" veri girişi : ");
+            //    var result = int.TryParse(Console.ReadLine(), out int number);
+
+            //    if (result)
+            //    {
+            //        x = number;
+            //        control = false;
+
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Hatalı bir formatta veri girişi yaptınız tekrar veri giriniz ");
+            //    }
+            //}
+
+            //return x;
+
+
+
+
+
+            //v.2
+
             var control = true;
-            int x =0;
+            var number = 0;
             while (control)
             {
-
-                Console.Write(" veri girişi : ");
-                var result = int.TryParse(Console.ReadLine(), out int number);
-
-                if (result)
+                try
                 {
-                    x = number;
-                    control = false;
-                   
+                    var data = int.Parse(Console.ReadLine());
+
+                    if (data <=0)
+                    {
+                        Console.WriteLine("0 ve sıfırdan küçük bir değer girilemez");
+                    }
+                    else { 
+                        
+                        control = false;
+                        number= data;
+                    }
                 }
-                else
+                catch 
                 {
+
                     Console.WriteLine("Hatalı bir formatta veri girişi yaptınız tekrar veri giriniz ");
                 }
             }
-
-            return x;
+          return number;
+           
 
         }
 
