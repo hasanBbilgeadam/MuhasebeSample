@@ -7,71 +7,49 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            #region MyRegion
+            //şifre 1234   public static 
+            //bakiye 2500  public static 
 
-            //var arr = new int[6, 6];
-            //Random rnd = new Random();
-            //for (int i = 0; i < 6; i++)
-            //{
-            //    for (int j = 0; j < 6; j++)
-            //    {
-            //        arr[i, j] = rnd.Next(1, 10);
-            //        Console.Write(arr[i, j] + " ");
-            //    }
-            //    Console.WriteLine();
-            //}
+            //veri girişlerinin hepsi kontrollü olmalı
+            //hiçbir şekilde çökmemeli
 
-            //Console.WriteLine("toplam sonucu");
-            //var result = SütünTopla(arr);
+            /*
+             ATM UYGULAMASI
 
-            //for (int i = 0; i < 6; i++)
-            //{
-            //    Console.Write(result[i] + " ");
-            //}
+                //tek seferlik şifre soracak şifre doğru ise atm menüsü açılak
+                // bu süreç 3 tekrarlansın 3 deneme sonunda hala doğru giriş olmaz ise çıkış yapılsın
 
-            #endregion
+                //1-para çekme
+                    //çekilecek miktarı iste parayı ver
+                    //bakiyeden parayı düş
+                    //çekeceği para bakiyeden büyükse!!! uyar  tekrar iste
+                //2- para ekleme
+                    //ekleyeceği miktarı iste => geçersiz veri girişi durumunda uyar ver ve tekrar iste
+                    //örn : 257 => 250 atm 5 lira ve bozuk para kabul etmiyor
+                    //!!! 10 lira altında bir para yükleme yapılamaz
 
+                //3- para gönder
+                    //alıcı hesap numarası iste sayıdan oluşmalı 5 haneli olmalı yine veri girişi kontrol yap hatalı girişte tekrar iste ve uyarı ver
+            //bakiye kontrol eğer giriş miktari uygunsa bakiyenden parayı
+            //aksi takdirde uyar
 
-            Random rnd = new Random();
-            var hedefSaniye = rnd.Next(1, 15);
+                    
+                //4- şifre değiştir 
+                     //veri girişini kontrol et hatalı durumda uyar
+                    //güncel şifresini iste eğer doğru girmiş ise
+                    //yeni şifreyi iste şifreyi güncelle
+                
+               // 5- çıkış yapı seçtiyse iyi günler deyip kapat
+            */
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            
+            Console.WriteLine("hasan baysal");
+            Console.ForegroundColor = ConsoleColor.Red;
 
-            Console.WriteLine("Oyun Başladı tam "+ hedefSaniye+" sonra bir tuşa basarsanız kazanırsınız");
-            var FirstTime = DateTime.Now;
+            Console.WriteLine("hasan baysal");
+              Console.ForegroundColor = ConsoleColor.Blue;
 
-            var dummy = Console.ReadLine();
-            var SecondTime = DateTime.Now;  
-
-            var timeResult = SecondTime-FirstTime;
-
-            var result = (int)timeResult.TotalSeconds;
-
-
-            Console.WriteLine("hedef süre "+ hedefSaniye);
-            Console.WriteLine("siz "+result+" saniye kadar sonra işlem yaptınız" );
-
-            if (result==hedefSaniye)
-            {
-                Console.WriteLine("kazandınız");
-            }
-            else
-            {
-                Console.WriteLine("kaybettiniz");
-            }
-
-            //oyunu başlatmak için enter'a basınız
-            // X saniye sonra bir tuşa bas ve enter'a bas
-            //x random bir sayıdır 1,15 aralığında 
-
-            //eğer kullanıcı tam olarak x'saniyede bu işlemi yapabilmiş ise
-            //kazandın diyoruz
-            //eğer başarmadı ise geçen süresi saniye bazında yazdır
-            //hedef (x)10 sizin süreiniz 7 => kaybettiniz
-
-            //DateTime time = DateTime.Now;   
-            //DateTime timeSecond = DateTime.Now.AddMinutes(10);
-            //var result =  timeSecond - time;
-            //Console.WriteLine((int)result.TotalSeconds);
-
+            Console.WriteLine("hasan baysal");
 
         }
 
