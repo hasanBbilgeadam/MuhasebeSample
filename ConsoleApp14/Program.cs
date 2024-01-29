@@ -45,15 +45,22 @@ namespace ConsoleApp14
              
              */
 
-            MyCustomList<char> list = new();
+            MyCustomList<int> list = new();
 
-            list.Add('a');
-            list.Add('a');
-            list.Add('a');
-            list.Add('a');
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+
+            Console.WriteLine("silme öncesi");
+
+            list.ListAll(); 
             
             Console.WriteLine("last item "+list.LastItem);
             Console.WriteLine("-----------");
+            
+            list.Delete(3);
+            Console.WriteLine("silme sonrası");
             list.ListAll(); 
         }
 
@@ -63,7 +70,7 @@ namespace ConsoleApp14
     }
 
    
-    public class MyCustomList<T>
+    public class MyCustomList<T> where T :struct
     {
 
         private T[] arr;
@@ -89,6 +96,36 @@ namespace ConsoleApp14
             _LastItem = item;   
             _count++;   
 
+        }
+
+        public void Delete(T item)
+        {
+
+            var newArr= new T[_count-1];
+
+
+            for (int i = 0,j=0; i < arr.Length-1; i++,j++)
+            {
+                if (Comparer<T>.Default.Compare(arr[i], item) != 0)
+                {
+                   
+
+                    newArr[i] = arr[j];
+                
+                }
+                else
+                {
+                    newArr[i] = arr[j + 1];
+                    j++;
+                }
+              
+
+            }
+
+
+            arr = newArr;
+            _LastItem = arr[arr.Length - 1];
+            --_count;
         }
 
 
