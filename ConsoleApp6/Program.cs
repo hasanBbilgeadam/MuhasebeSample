@@ -27,16 +27,16 @@
     }
 
     //string
-    public class DinamikVeriDeposu
+    public class DinamikVeriDeposu<T>
     {
-        private string [] _arr;
+        private T [] _arr;
         private int _count=0;
 
 
         public int Count { get { return _count; } }
-        public void Add(string data)
+        public void Add(T data)
         {
-            var newArr = new string[_count+1];
+            var newArr = new T[_count+1];
            
 
             for (int i = 0; i < _count; i++)
