@@ -50,8 +50,10 @@ namespace WinFormsApp2
             if (checkBox1.Checked)
             {
                 str += "birinci seçildi ";
+
+                MessageBox.Show(" "+checkBox1.Text);
             }
-            if (checkBox2.Checked)
+                if (checkBox2.Checked)
             {
                 str += "ikinicisi seçildi";
             }
