@@ -47,6 +47,7 @@
             button1 = new Button();
             listBox1 = new ListBox();
             button2 = new Button();
+            button3 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -235,22 +236,33 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(246, 364);
             listBox1.TabIndex = 4;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // button2
             // 
-            button2.Location = new Point(609, 404);
+            button2.Location = new Point(597, 404);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 5;
             button2.Text = "List All";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += button2_Click_1;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(499, 408);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 6;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(listBox1);
             Controls.Add(button1);
@@ -259,6 +271,7 @@
             Controls.Add(groupBox1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -289,5 +302,6 @@
         private Button button1;
         private ListBox listBox1;
         private Button button2;
+        private Button button3;
     }
 }

@@ -73,12 +73,58 @@ namespace WinFormsApp3
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var lb = sender as ListBox;
+
+            var data = (string)lb.SelectedItem;
+
+            if (data == string.Empty)
+            {
+                return;
+            }
+
+            var id = int.Parse(data.Split(" ")[0]);
+
+
+            foreach (var item in People)
+            {
+                if (item.Id == id)
+                {
+
+
+
+                    FrmInfo frm = new();
+
+                    frm.Person = item;
+
+                    frm.Show();
+
+
+                }
+            }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
             listBox1.Items.Clear();
 
 
             foreach (var item in People)
             {
-                listBox1.Items.Add(item.Name + " " + item.SurName);
+                listBox1.Items.Add(item.Id + " " + item.Name + " " + item.SurName);
             }
         }
     }
@@ -86,6 +132,12 @@ namespace WinFormsApp3
     public class Person
     {
 
+        public Person()
+        {
+            Id = new Random().Next(100, 10000000);
+
+        }
+        public int Id { get; set; }
         public List<string> Color { get; set; } = new();
         public String Gender { get; set; }
         public String Name { get; set; }
