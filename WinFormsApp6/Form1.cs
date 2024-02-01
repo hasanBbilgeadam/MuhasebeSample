@@ -3,9 +3,9 @@ namespace WinFormsApp6
     public partial class Form1 : Form
     {
 
-        private string defaultConfigValues = 
+        private string defaultConfigValues =
             "FormText|form1" + Environment.NewLine +
-            "FormBackColor|-123123" +Environment.NewLine + 
+            "FormBackColor|-123123" + Environment.NewLine +
             "FormForeColor|-123123";
 
         public Form1()
@@ -16,23 +16,23 @@ namespace WinFormsApp6
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            if (File.Exists("config.txt"))
-            {
-                var data = File.ReadAllLines("config.txt");
-                SetConfigurations(data);
-            }
-            else
-            {
-                
+            //if (File.Exists("config.txt"))
+            //{
+            //    var data = File.ReadAllLines("config.txt");
+            //    SetConfigurations(data);
+            //}
+            //else
+            //{
 
-                File.WriteAllText("config.txt", defaultConfigValues);
 
-               var data = File.ReadAllLines("config.txt");
-                SetConfigurations(data);
-            }
+            //    File.WriteAllText("config.txt", defaultConfigValues);
+
+            //    var data = File.ReadAllLines("config.txt");
+            //    SetConfigurations(data);
+            //}
 
         }
-        private void SetConfigurations(string []configs)
+        private void SetConfigurations(string[] configs)
         {
 
             try
@@ -59,6 +59,18 @@ namespace WinFormsApp6
 
 
 
-        } 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var response = colorDialog1.ShowDialog();
+
+            if (response == DialogResult.OK)
+            {
+               var renk =   colorDialog1.Color.ToArgb();
+
+                MessageBox.Show(renk.ToString());
+            }
+        }
     }
 }
